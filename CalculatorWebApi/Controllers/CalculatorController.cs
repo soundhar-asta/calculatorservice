@@ -1,5 +1,5 @@
-using CalculatorWebApi.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using CalculatorWebApi.Interfaces; // Ensure correct namespace for ICalculatorService
 
 namespace CalculatorWebApi.Controllers
 {
@@ -15,27 +15,15 @@ namespace CalculatorWebApi.Controllers
         }
 
         [HttpGet("add")]
-        public ActionResult<int> Add(int a, int b)
-        {
-            return Ok(_calculatorService.Add(a, b));
-        }
+        public int Add(int a, int b) => _calculatorService.Add(a, b);
 
         [HttpGet("subtract")]
-        public ActionResult<int> Subtract(int a, int b)
-        {
-            return Ok(_calculatorService.Subtract(a, b));
-        }
+        public int Subtract(int a, int b) => _calculatorService.Subtract(a, b);
 
         [HttpGet("multiply")]
-        public ActionResult<int> Multiply(int a, int b)
-        {
-            return Ok(_calculatorService.Multiply(a, b));
-        }
+        public int Multiply(int a, int b) => _calculatorService.Multiply(a, b);
 
         [HttpGet("divide")]
-        public ActionResult<int> Divide(int a, int b)
-        {
-            return Ok(_calculatorService.Divide(a, b));
-        }
+        public int Divide(int a, int b) => _calculatorService.Divide(a, b);
     }
 }
